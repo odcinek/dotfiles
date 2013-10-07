@@ -6,3 +6,5 @@ brew install coreutils
 cd ~/.dotfiles && ./deploy.sh
 vim +BundleInstall +qall
 ```
+
+Some stuff might be OSX/brew specific.
