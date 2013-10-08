@@ -27,6 +27,7 @@ alias rscp="rsync --progress --partial -avz -e ssh"
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 alias grep='ggrep'
 alias chrome='open -a Google\ Chrome'
+alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
