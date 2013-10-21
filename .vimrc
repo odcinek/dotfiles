@@ -63,11 +63,11 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized
 
-"autocmd FileType javascript setlocal sw=2 sts=2 et
-"autocmd FileType ruby setlocal ts=2 sts=2 sw=2
-"autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-"set showtabline=2
-"set hidden
+autocmd FileType javascript setlocal sw=2 sts=2 et
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+set showtabline=2
+set hidden
 
 " Vagrantfile
 "au BufNewFile,BufRead [vV]agrantfile        set filetype=ruby
