@@ -6,3 +6,4 @@ ln -vis ~/.dotfiles/.vim ~/.vim
 ln -vis ~/.dotfiles/.bashrc ~/.bashrc
 ln -vis ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -vis ~/.dotfiles/.env ~/.env
+ln -vis ~/.dotfiles/.gitconfig ~/.gitconfig
