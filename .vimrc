@@ -9,6 +9,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'thoughtbot/vim-rspec'
 "Bundle 'tpope/vim-rails.git'
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -82,3 +83,8 @@ set hidden
 "imap <ESC>[F <C-O><End>
 "cmap <ESC>[H <Home>
 "cmap <ESC>[F <End>
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
