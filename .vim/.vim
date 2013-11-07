@@ -1,1 +1,0 @@
-/Users/odcinek/.dotfiles/.vim
