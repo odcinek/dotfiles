@@ -8,6 +8,6 @@ for path in .vimrc .vim .bashrc .tmux.conf .env .gitconfig; do
   fi
 done
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || true
+rm -rf ~/.vim/bundle/vundle && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || true
 wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf -O ~/.env/Inconsolata%20for%20Powerline.otf
 vim +BundleInstall +qall
