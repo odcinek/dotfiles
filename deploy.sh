@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e 
 
 for path in .vimrc .vim .bashrc .tmux.conf .env .gitconfig; do
   echo $path;
