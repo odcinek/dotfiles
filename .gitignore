@@ -1,1 +1,3 @@
 .vim/bundle/*
+.vim/backup/
+.vim/undo/

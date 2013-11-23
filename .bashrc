@@ -50,3 +50,5 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export PAGER=less
 export VISUAL=vim
+
+alias fetch="rsync --progress --partial -avz -e ssh --remove-source-files root@171.25.182.36:~/downloads/* ~/Series/"
