@@ -8,4 +8,5 @@ ln -vis ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -vis ~/.dotfiles/.env ~/.env
 ln -vis ~/.dotfiles/.gitconfig ~/.gitconfig
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
 vim +BundleInstall +qall
