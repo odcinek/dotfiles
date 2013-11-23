@@ -12,7 +12,7 @@ HISTFILESIZE=1000000000
 HISTSIZE=1000000
 HISTCONTROL=ignoredups:ignorespace
 
-if [ ! -f /usr/local/bin/brew ]; then 
+if [ -f /usr/local/bin/brew ]; then 
   eval `gdircolors ~/.env/dircolors.ansi-universal`
   alias grep='ggrep'
   alias ls='gls -G --color'
