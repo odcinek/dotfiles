@@ -12,22 +12,24 @@ HISTFILESIZE=1000000000
 HISTSIZE=1000000
 HISTCONTROL=ignoredups:ignorespace
 
-
 if [ -f /usr/local/bin/brew ]; then 
   eval `gdircolors ~/.env/dircolors.ansi-universal`
   alias grep='ggrep'
+  alias ls='gls'
+  alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
+  alias chrome='~/.bin/chrome'
   if [ -f `brew --prefix`/etc/bash_completion ]; then
       . `brew --prefix`/etc/bash_completion
   fi
 fi
 
-#export TERM=screen-256color       # for a tmux -2 session (also for screen)
+[ -n "$TMUX" ] && export TERM=xterm-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:~/.bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 export PS1='\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;34m\]\H\[\033[00m\]:[\#]:\[\033[01;32m\]\w\[\033[00m\]\n\[\033[01;31m\]#\[\033[00m\] '
 
-alias ls='gls -G --color'
+alias ls='ls -G --color'
 alias ll='ls -alhF'
 alias la='ls -A'
 alias v="vi"
@@ -35,9 +37,8 @@ alias l="ls -alh"
 alias c="cd"
 alias m="make"
 alias rscp="rsync --progress --partial -avz -e ssh"
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
-alias chrome='~/.bin/chrome'
 alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no'
+alias tmux="~/local/bin/tmux attach"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -57,9 +58,3 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export PAGER=less
 export VISUAL=vim
-
-alias fetch="rsync --progress --partial -avz -e ssh --remove-source-files root@171.25.182.36:~/downloads/* ~/Series/"
-
-alias tmux="~/local/bin/tmux attach"
-[ -n "$TMUX" ] && export TERM=xterm-256color
-
