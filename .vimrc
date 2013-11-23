@@ -59,63 +59,35 @@ if exists("+undofile")
   set undofile
 endif
 
-"""""""""""""""""""""""""""""""""""""""
-" GENERAL EDITING SETUP
-"""""""""""""""""""""""""""""""""""""""
-" Prevent Vim from clobbering the scrollback buffer. See
-" http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
 
-" display incomplete commands
 set showcmd
-
 let mapleader = ","
 
-" Set encoding
 set encoding=utf-8
-
-" Whitespace stuff
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-" Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
-" Status bar
 set laststatus=2
 
-" Turn off menu in gui
 set guioptions="agimrLt"
-" Turn off mouse click in gui
 set mouse=""
 
-" Theme...
 set t_Co=256
 set background=dark
-"colorscheme Tomorrow-Night-Eighties
-"colorscheme base16-default
-"colorscheme grb256
-"colorscheme mustang
-"colorscheme xoria256
-"colorscheme wombat256
-"colorscheme zenburn
 colorscheme molokai
-
-" highlight the current line
 set cursorline
-" Highlight active column
 set cuc cul
-
-" Show linenumbers
 set number
 set ruler
 
