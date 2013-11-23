@@ -45,7 +45,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+if [ -f /usr/libexec/java_home ]; then
+ if [ "$(/usr/libexec/java_home -v 1.7 &> /dev/null)" = 0 ]; then
+   export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+  else
+   export JAVA_HOME=$(/usr/libexec/java_home)
+  fi
+
+fi
+
 export VIRTUALENV_DISTRIBUTE=true
 export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
 export PIP_REQUIRE_VIRTUALENV=true
