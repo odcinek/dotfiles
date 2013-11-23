@@ -13,14 +13,17 @@ HISTSIZE=1000000
 HISTCONTROL=ignoredups:ignorespace
 
 if [ -f /usr/local/bin/brew ]; then 
+  echo "OX"
   eval `gdircolors ~/.env/dircolors.ansi-universal`
   alias grep='ggrep'
-  alias ls='gls'
+  alias ls='gls -G --color'
   alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
   alias chrome='~/.bin/chrome'
   if [ -f `brew --prefix`/etc/bash_completion ]; then
       . `brew --prefix`/etc/bash_completion
   fi
+else
+  alias ls='ls -G --color'
 fi
 
 [ -n "$TMUX" ] && export TERM=xterm-256color
@@ -29,7 +32,6 @@ export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 export PS1='\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;34m\]\H\[\033[00m\]:[\#]:\[\033[01;32m\]\w\[\033[00m\]\n\[\033[01;31m\]#\[\033[00m\] '
 
-alias ls='ls -G --color'
 alias ll='ls -alhF'
 alias la='ls -A'
 alias v="vi"
