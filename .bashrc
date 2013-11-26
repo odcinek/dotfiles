@@ -42,9 +42,9 @@ alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthen
 
 if [ -a ~/local/bin/tmux ]; then
    alias tmux="~/local/bin/tmux attach"
-fi 
-
-alias tmux="tmux attach"
+else
+  alias tmux="tmux attach"
+fi
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
