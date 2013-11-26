@@ -39,7 +39,12 @@ alias c="cd"
 alias m="make"
 alias rscp="rsync --progress --partial -avz -e ssh"
 alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no'
-alias tmux="~/local/bin/tmux attach"
+
+if [ -a ~/local/bin/tmux ]; then
+   alias tmux="~/local/bin/tmux attach"
+fi 
+
+alias tmux="tmux attach"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
