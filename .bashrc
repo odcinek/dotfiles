@@ -19,7 +19,7 @@ if [ -f /usr/local/bin/brew ]; then
   alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
   alias chrome='~/.bin/chrome'
   if [ -f `brew --prefix`/etc/bash_completion ]; then
-      . `brew --prefix`/etc/bash_completion
+    . `brew --prefix`/etc/bash_completion
   fi
 else
   alias ls='ls -G --color'
@@ -42,16 +42,15 @@ alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthen
 alias tmux="~/local/bin/tmux attach"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+  . /etc/bash_completion
 fi
 
 if [ -f /usr/libexec/java_home ]; then
- if [ "$(/usr/libexec/java_home -v 1.7 &> /dev/null)" = 0 ]; then
-   export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+  if [ "$(/usr/libexec/java_home -v 1.7 &> /dev/null)" = 0 ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
   else
-   export JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME=$(/usr/libexec/java_home)
   fi
-
 fi
 
 export VIRTUALENV_DISTRIBUTE=true

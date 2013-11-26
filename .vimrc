@@ -35,6 +35,8 @@ Bundle 'tpope/vim-classpath'
 Bundle 'bling/vim-airline'
 Bundle 'roman/golden-ratio'
 Bundle 'suan/vim-instant-markdown'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
@@ -258,3 +260,15 @@ autocmd FileType ruby       setlocal  ts=2 sts=2 sw=2
 autocmd FileType python     setlocal  ts=8 sw=4 sts=4 et
 set showtabline=2
 set hidden
+
+"autocmd vimenter * NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_new_tab=1
+let g:nerdtree_tabs_autoclose=1
+set tags=tags;/
+
+map  <C-a> :tabn<CR>
+map  <C-s> :tabp<CR>
+map  <C-f> :tabnew<CR>
+
+nmap <silent> <C-D> :NERDTreeTabsToggle<CR>
