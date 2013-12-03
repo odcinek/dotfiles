@@ -37,6 +37,7 @@ Bundle 'roman/golden-ratio'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'mileszs/ack.vim'
 
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
@@ -164,9 +165,6 @@ function! MapCR()
 endfunction
 call MapCR()
 
-" Ack bits
-map <leader>a :Ack! -ai 
-
 " Remove highlights
 nmap <Leader><CR> :nohlsearch<cr>
 
@@ -231,9 +229,6 @@ set shiftwidth=2
 set backspace=indent,eol,start
 set lbr
 
-noremap <C-h> :bprev<CR>
-noremap <C-l> :bnext<CR> 
-
 set laststatus=2
 let g:buftabs_in_statusline=1
 set paste
@@ -260,15 +255,30 @@ autocmd FileType ruby       setlocal  ts=2 sts=2 sw=2
 autocmd FileType python     setlocal  ts=8 sw=4 sts=4 et
 set showtabline=2
 set hidden
+set tags=tags;/
 
-"autocmd vimenter * NERDTree
+let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
 let g:nerdtree_tabs_autoclose=1
-set tags=tags;/
+let g:nerdtree_tabs_synchronize_view=1
+let g:NERDTreeWinSize = 40
+let g:nerdtree_tabs_focus_on_files=1
 
-map  <C-a> :tabn<CR>
-map  <C-s> :tabp<CR>
-map  <C-f> :tabnew<CR>
+function! NERDTreeTabsToggle() "fix width for tabs plugin
+    execute ":NERDTreeTabsToggle"
+    set winwidth=50
+endfunction
 
-nmap <silent> <C-D> :NERDTreeTabsToggle<CR>
+function! FAckFinder(arg)
+  execute ":NERDTreeTabsClose"
+  execute ":Ack! -i " . a:arg
+endfunction
+
+command! -nargs=* -bar FAck :call FAckFinder(<f-args>)
+
+map <C-f> :FAck<space>
+map <C-a> :tabn<CR>
+map <C-s> :tabp<CR>
+map <C-D> :call NERDTreeTabsToggle()<CR>
+

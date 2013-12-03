@@ -37,3 +37,6 @@ cd ..
  
 # cleanup
 rm -rf $HOME/tmux_tmp
+
+mkdir ~/.bin
+curl http://beyondgrep.com/ack-2.10-single-file > ~/.bin/ack && chmod 0755 !#:3

@@ -71,3 +71,6 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export PAGER=less
 export VISUAL=vim
+
+stty -ixon #ctrl+s fix
+alias ack=~/.bin/ack
