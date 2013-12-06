@@ -252,7 +252,7 @@ colorscheme solarized
 
 autocmd FileType javascript setlocal  sw=2 sts=2 et
 autocmd FileType ruby       setlocal  ts=2 sts=2 sw=2
-autocmd FileType python     setlocal  ts=8 sw=4 sts=4 et
+autocmd FileType python     setlocal  ts=4 sw=4 sts=4 et
 set showtabline=2
 set hidden
 set tags=tags;/
@@ -282,3 +282,14 @@ map <C-a> :tabn<CR>
 map <C-s> :tabp<CR>
 map <C-D> :call NERDTreeTabsToggle()<CR>
 
+"remaping osx defaults
+map <ESC>[5D <C-Left>
+map <ESC>[5C <C-Right>
+map! <ESC>[5D <C-left>
+map! <ESC>[5C <C-Right>
+
+"moving around splits with ctrl+arrows
+nnoremap <C-Right> <c-w>l
+nnoremap <C-Left> <c-w>h
+nnoremap <C-Up> <c-w>k
+nnoremap <C-Down> <c-w>j
