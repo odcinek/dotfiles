@@ -293,3 +293,5 @@ nnoremap <C-Right> <c-w>l
 nnoremap <C-Left> <c-w>h
 nnoremap <C-Up> <c-w>k
 nnoremap <C-Down> <c-w>j
+
+set t_ut=
