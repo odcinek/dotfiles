@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+# FB specific
 if [ -f ~/.bash_local ]; then
   . ~/.bash_local
 fi
@@ -13,6 +16,7 @@ HISTSIZE=1000000
 HISTCONTROL=ignoredups:ignorespace
 
 if [ -f /usr/local/bin/brew ]; then 
+  # OSX
   eval `gdircolors ~/.env/dircolors.ansi-universal`
   alias grep='ggrep'
   alias ls='gls -G --color'
@@ -21,12 +25,20 @@ if [ -f /usr/local/bin/brew ]; then
   if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
   fi
+  if [ -f /usr/libexec/java_home ]; then
+    if [ "$(/usr/libexec/java_home -v 1.7 &> /dev/null)" = 0 ]; then
+      export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+    else
+      export JAVA_HOME=$(/usr/libexec/java_home)
+    fi
+  fi
+  stty -ixon
 else
   alias ls='ls -G --color'
 fi
 
 [ -n "$TMUX" ] && export TERM=xterm
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:~/.bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:~/.bin:/opt/chef/embedded/bin/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -36,10 +48,9 @@ alias ll='ls -alhF'
 alias la='ls -A'
 alias v="vi"
 alias l="ls -alh"
-alias c="cd"
-alias m="make"
 alias rscp="rsync --progress --partial -avz -e ssh"
 alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no'
+alias ack=~/.bin/ack
 
 if [ -a ~/local/bin/tmux ]; then
    alias tmux="~/local/bin/tmux attach"
@@ -51,12 +62,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-if [ -f /usr/libexec/java_home ]; then
-  if [ "$(/usr/libexec/java_home -v 1.7 &> /dev/null)" = 0 ]; then
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
-  else
-    export JAVA_HOME=$(/usr/libexec/java_home)
-  fi
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
 fi
 
 export VIRTUALENV_DISTRIBUTE=true
@@ -72,13 +79,3 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export PAGER=less
 export VISUAL=vim
-
-stty -ixon #ctrl+s fix
-alias ack=~/.bin/ack
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi

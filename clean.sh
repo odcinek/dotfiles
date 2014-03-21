@@ -7,5 +7,4 @@ for path in .vimrc .vim .bashrc .tmux.conf .env .gitconfig; do
   #rm -rf ~/$path && true
   unlink ~/$path &> /dev/null && true
 done
-clear
 echo "Deploy undone"
