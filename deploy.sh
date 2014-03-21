@@ -10,6 +10,6 @@ for path in .vimrc .vim .bashrc .tmux.conf .env .gitconfig; do
 done
 
 rm -rf ~/.vim/bundle/vundle && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || true
-wget --no-check-certificate https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf -O ~/.env/Inconsolata%20for%20Powerline.otf
+curl https://raw.githubusercontent.com/Lokaltog/powerline-fonts/master/Inconsolata/Inconsolata%20for%20Powerline.otf > ~/.env/Inconsolata%20for%20Powerline.otf
 vim +BundleInstall +qall
 echo "Deploy done" 

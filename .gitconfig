@@ -1,5 +1,6 @@
 [user]
-  email = odcinek@fb.com
+  email = odcinek@gmail.com
+#  email = odcinek@fb.com
   name = Marcin Sawicki
 [push]
   default = matching
@@ -20,8 +21,8 @@
   added = yellow
   changed = green
   untracked = cyan
-[http]
-  proxy = fwdproxy.any:8080
+#[http]
+#  proxy = fwdproxy.any:8080
 [url "https://github.com/"]
   insteadOf = git://github.com/
 [alias]
