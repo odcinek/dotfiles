@@ -43,12 +43,11 @@ match ErrorMsg /\s\+$\| \+\ze\t/
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
 
 set background=dark
-colorscheme solarized
-
-let g:buftabs_in_statusline=1
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+let g:buftabs_in_statusline=1
+colorscheme solarized
 
 set autoindent
 set backspace=indent,eol,start
