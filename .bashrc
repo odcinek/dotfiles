@@ -25,7 +25,7 @@ else
   alias ls='ls -G --color'
 fi
 
-[ -n "$TMUX" ] && export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=xterm
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:~/.bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"

@@ -1,8 +1,8 @@
 [user]
-	email = odcinek@gmail.com
-	name = Marcin Sawicki
+  email = odcinek@fb.com
+  name = Marcin Sawicki
 [push]
-	default = matching
+  default = matching
 [color]
   branch = auto
   diff = auto
@@ -20,3 +20,9 @@
   added = yellow
   changed = green
   untracked = cyan
+[http]
+  proxy = fwdproxy.any:8080
+[url "https://github.com/"]
+  insteadOf = git://github.com/
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
