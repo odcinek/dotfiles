@@ -16,6 +16,8 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'skalnik/vim-vroom'
 Bundle 't9md/vim-chef'
 Bundle 'ngmy/vim-rubocop'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
@@ -104,7 +106,7 @@ set wildmode=list:longest,list:full
 autocmd FileType javascript setlocal  sw=2 sts=2 et
 autocmd FileType ruby       setlocal  ts=2 sts=2 sw=2
 autocmd FileType python     setlocal  ts=4 sw=4 sts=4 et
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
@@ -120,3 +122,17 @@ nmap <Leader>r :RuboCop<CR>
 if filereadable('/home/odcinek/opsfiles/scripts/chef/.rubocop.yml')
   let g:vimrubocop_config = '/home/odcinek/opsfiles/scripts/chef/.rubocop.yml'
 endif
+
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" More natural split opening
+set splitbelow
+set splitright
+
+" Line numbering
+set relativenumber
+set number
