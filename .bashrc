@@ -37,7 +37,7 @@ else
   alias ls='ls -G --color'
 fi
 
-[ -n "$TMUX" ] && export TERM=screen-256color
+TERM=screen-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:~/.bin:/opt/chef/embedded/bin/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
