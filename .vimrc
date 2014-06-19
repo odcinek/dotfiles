@@ -1,9 +1,10 @@
 set nocompatible
-filetype plugin indent on
 syntax on
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
+
+filetype off
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
@@ -18,6 +19,8 @@ Bundle 't9md/vim-chef'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+
+filetype plugin indent on
 
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
@@ -136,3 +139,6 @@ set splitright
 " Line numbering
 set relativenumber
 set number
+
+"au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+"au FileType elixir setl sw=2 sts=2 et iskeyword+=!,?
