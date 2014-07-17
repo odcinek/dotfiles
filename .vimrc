@@ -13,7 +13,10 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'tpope/vim-fireplace'
 Bundle 'bling/vim-airline'
+Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'skalnik/vim-vroom'
 Bundle 't9md/vim-chef'
 Bundle 'ngmy/vim-rubocop'
@@ -140,5 +143,15 @@ set splitright
 set relativenumber
 set number
 
-"au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
-"au FileType elixir setl sw=2 sts=2 et iskeyword+=!,?
+autocmd StdinReadPre * let s:std_in=1
+"autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+map <Leader>\ <plug>NERDTreeTabsToggle<CR>
+"nnoremap <leader>\ dd
+set autochdir
+let NERDTreeChDirMode=2
+let NERDTreeMapOpenInTab='<ENTER>'
+
+map <Leader>[ <Esc>:tabp<CR>
+map <Leader>] <Esc>:tabn<CR>

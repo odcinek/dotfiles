@@ -40,6 +40,7 @@ fi
 TERM=screen-256color
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:~/.bin:/opt/chef/embedded/bin/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
+export PATH="~/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PS1='\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;34m\]\H\[\033[00m\]:[\#]:\[\033[01;32m\]\w\[\033[00m\]\n\[\033[01;31m\]#\[\033[00m\] '
