@@ -82,3 +82,5 @@ export PAGER=less
 export VISUAL=vim
 
 alias iex='rlwrap -a dummy iex'
+alias sudo='sudo -E'
+alias vi='vim'
