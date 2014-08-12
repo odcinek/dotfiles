@@ -147,11 +147,15 @@ autocmd StdinReadPre * let s:std_in=1
 "autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-map <Leader>\ <plug>NERDTreeTabsToggle<CR>
-"nnoremap <leader>\ dd
 set autochdir
 let NERDTreeChDirMode=2
 let NERDTreeMapOpenInTab='<ENTER>'
 
 map <Leader>[ <Esc>:tabp<CR>
 map <Leader>] <Esc>:tabn<CR>
+
+map <Leader>= <plug>NERDTreeTabsToggle<CR>
+
+let g:lasttab = 1
+nmap <Leader>\ :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
