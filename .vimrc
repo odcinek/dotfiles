@@ -149,7 +149,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 set autochdir
 let NERDTreeChDirMode=2
-let NERDTreeMapOpenInTab='<ENTER>'
+"let NERDTreeMapOpenInTab='<ENTER>'
+let NERDTreeMapOpenInTab='<space>'
 
 map <Leader>[ <Esc>:tabp<CR>
 map <Leader>] <Esc>:tabn<CR>
@@ -160,3 +161,8 @@ let g:lasttab = 1
 nmap <Leader>\ :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 au VimEnter * if &diff | execute 'windo set wrap' | endif
+
+" Jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
