@@ -24,7 +24,7 @@
 [include]
   path = ~/.gitconfig_local
 [alias]
-  lg = ! git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit | egrep -v -i -e 'twsvcscm|svcscm|autocommit' | less -R -+F -+
+  lg = ! git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit | egrep -v -i -e 'twsvcscm|svcscm|autocommit' | less -R -+F -+
   br = !sh -c \"git branch | ~/bin/features\"
 [core]
 	pager = less -+F -+X -R

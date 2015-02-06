@@ -9,7 +9,8 @@ filetype off
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'thoughtbot/vim-rspec'
-Bundle 'vim-ruby/vim-ruby'
+"Bundle 'vim-ruby/vim-ruby'
+Bundle 'git@github.com:vim-ruby/vim-ruby.git'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'tpope/vim-fireplace'
 Bundle 'bling/vim-airline'
@@ -158,3 +159,4 @@ map <Leader>= <plug>NERDTreeTabsToggle<CR>
 let g:lasttab = 1
 nmap <Leader>\ :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+au VimEnter * if &diff | execute 'windo set wrap' | endif
