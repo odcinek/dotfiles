@@ -50,6 +50,10 @@ alias la='ls -A'
 alias v="vi"
 alias l="ls -alh"
 alias rscp="rsync --progress --partial -avz -e ssh"
+alias rscpr="rsync --remove-source-files --progress --partial -avz -e ssh"
+kodi() {
+    /usr/local/Cellar/rsync/3.1.1/bin/rsync --remove-source-files --protect-args --progress --partial -avz -e ssh --rsync-path=/storage/.kodi/addons/network.backup.rsync/bin/rsync $1 "root@kodi:$2"
+}
 alias sshp='ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no'
 alias ack=~/.bin/ack
 
@@ -84,3 +88,5 @@ export VISUAL=vim
 alias iex='rlwrap -a dummy iex'
 alias sudo='sudo -E'
 alias vi='vim'
+alias duh='du -sch .[!.]* * |sort -h'
+alias tunnel='autossh -M 0 -q -N -o "ControlMaster no" -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -D 8080 root@tleilax.pl -v'

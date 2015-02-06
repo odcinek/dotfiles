@@ -148,7 +148,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 set autochdir
 let NERDTreeChDirMode=2
-let NERDTreeMapOpenInTab='<ENTER>'
+"let NERDTreeMapOpenInTab='<ENTER>'
+let NERDTreeMapOpenInTab='<space>'
 
 map <Leader>[ <Esc>:tabp<CR>
 map <Leader>] <Esc>:tabn<CR>
@@ -158,3 +159,9 @@ map <Leader>= <plug>NERDTreeTabsToggle<CR>
 let g:lasttab = 1
 nmap <Leader>\ :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
