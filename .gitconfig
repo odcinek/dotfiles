@@ -1,30 +1,29 @@
 [user]
- #email = odcinek@gmail.com
-  email = odcinek@fb.com
-  name = Marcin Sawicki
+	name = Marcin Sawicki
+	email = odcinek@gmail.com
 [push]
-  default = matching
+	default = matching
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+	branch = auto
+	diff = auto
+	status = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red
-  new = cyan
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = cyan
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [include]
-  path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
 [alias]
-  lg = ! git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit | egrep -v -i -e 'twsvcscm|svcscm|autocommit' | less -R -+F -+
-  br = !sh -c \"git branch | ~/bin/features\"
+	lg = ! git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit | egrep -v -i -e 'twsvcscm|svcscm|autocommit' | less -R -+F -+
+	br = !sh -c \"git branch | ~/bin/features\"
 [core]
 	pager = less -+F -+X -R
